@@ -6,7 +6,7 @@ import 'package:lh_task/domain/repositories/character_repository.dart';
 
 class CharacterRepositoryImpl implements CharacterRepository{
   final CharacterRemoteDataSource characterRemoteDataSource;
-  CharacterRepositoryImpl(this.characterRemoteDataSource);
+  CharacterRepositoryImpl({required this.characterRemoteDataSource});
 
 
 

@@ -33,7 +33,7 @@ void main() {
 
     
     // act
-   final result = await getCharacterUseCase.execute(testId);
+   final result = await getCharacterUseCase.call(testId);
     // assert
 
     expect(result,const Right(testCharacterEntity));

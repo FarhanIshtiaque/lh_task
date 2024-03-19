@@ -9,7 +9,7 @@ import 'package:lh_task/data/models/character_model.dart';
 class CharacterRemoteDataSourceImpl implements CharacterRemoteDataSource{
 
   final http.Client client;
-  CharacterRemoteDataSourceImpl(this.client);
+  CharacterRemoteDataSourceImpl({required this.client});
 
   @override
   Future<CharacterModel> getCharacter(int id) async{

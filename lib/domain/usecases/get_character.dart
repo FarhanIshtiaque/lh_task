@@ -7,7 +7,7 @@ class GetCharacterUseCase{
   final CharacterRepository characterRepository;
   GetCharacterUseCase(this.characterRepository);
 
-  Future<Either<Failure,CharacterEntity>> execute(int id){
+  Future<Either<Failure,CharacterEntity>> call(int id){
     return characterRepository.getCharacter(id);
 
   }
