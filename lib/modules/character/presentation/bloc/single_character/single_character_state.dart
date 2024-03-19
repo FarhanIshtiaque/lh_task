@@ -1,4 +1,5 @@
-import 'package:lh_task/domain/entities/character_entity.dart';
+
+import 'package:lh_task/modules/character/domain/entities/character_entity.dart';
 
 abstract class SingleCharacterState {}
 

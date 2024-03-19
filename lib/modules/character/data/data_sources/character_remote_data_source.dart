@@ -1,4 +1,4 @@
-import 'package:lh_task/data/models/character_model.dart';
+import 'package:lh_task/modules/character/data/models/character_model.dart';
 
 abstract class CharacterRemoteDataSource {
 

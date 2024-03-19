@@ -1,9 +1,9 @@
 import 'dart:convert';
 import 'package:lh_task/core/constants/api_endpoints.dart';
 import 'package:lh_task/core/error/server_exception.dart';
-import 'package:lh_task/data/data_sources/character_remote_data_source.dart';
 import 'package:http/http.dart' as http;
-import 'package:lh_task/data/models/character_model.dart';
+import 'package:lh_task/modules/character/data/data_sources/character_remote_data_source.dart';
+import 'package:lh_task/modules/character/data/models/character_model.dart';
 
 
 class CharacterRemoteDataSourceImpl implements CharacterRemoteDataSource{
