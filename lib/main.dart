@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lh_task/modules/character/presentation/bloc/single_character/single_character_bloc.dart';
 import 'package:lh_task/modules/character/presentation/bloc/single_character/single_character_event.dart';
 import 'package:lh_task/modules/character/presentation/pages/all_cast.dart';
+import 'package:lh_task/modules/character/presentation/pages/cast_details.dart';
 import 'package:lh_task/modules/character/presentation/pages/characters_list.dart';
 import 'package:lh_task/modules/home/presentation/pages/home.dart';
 
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
             useMaterial3: true,
           ),
-          home: const AllCast()),
+          home: const CastDetails()),
     );
   }
 }

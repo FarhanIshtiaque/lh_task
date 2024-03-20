@@ -10,6 +10,11 @@ const tittle4 = TextStyle(
   fontWeight: FontWeight.w600,
 );
 
+const body1 = TextStyle(
+  fontSize: 17,
+  fontWeight: FontWeight.w400,
+);
+
 const body1Strong = TextStyle(
   fontSize: 17,
   fontWeight: FontWeight.w600,
