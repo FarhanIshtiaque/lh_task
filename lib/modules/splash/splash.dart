@@ -6,7 +6,7 @@ import 'package:lh_task/modules/character/presentation/bloc/single_character/sin
 import 'package:lh_task/modules/character/presentation/bloc/single_character/single_character_state.dart';
 
 class Splash extends StatelessWidget {
-  const Splash({Key? key}) : super(key: key);
+  const Splash({super.key});
 
   @override
   Widget build(BuildContext context) {

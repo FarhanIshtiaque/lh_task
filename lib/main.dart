@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lh_task/modules/character/presentation/bloc/single_character/single_character_bloc.dart';
 import 'package:lh_task/modules/character/presentation/bloc/single_character/single_character_event.dart';
+import 'package:lh_task/modules/character/presentation/pages/characters_list.dart';
 
 import 'injection_container.dart';
 import 'modules/splash/splash.dart';
@@ -24,6 +25,6 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: const Splash());
+        home: const CharactersList());
   }
 }

@@ -14,7 +14,7 @@ class SingleCharacterBloc extends Bloc<SingleCharacterEvent, SingleCharacterStat
       final failureOrCharacter = await getCharacterUseCase(event.id);
       failureOrCharacter.fold(
               (failure) => emit(SingleCharacterError(failure.toString())),
-              (movies) => emit(SingleCharacterLoaded(movies)));
+              (character) => emit(SingleCharacterLoaded(character)));
     });
   }
 }
