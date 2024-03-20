@@ -90,7 +90,6 @@ class CharacterRemoteDataSourceImpl implements CharacterRemoteDataSource{
 
     if (response.statusCode == 200) {
       final responseBody = json.decode(response.body);
-      logger.d(responseBody);
       final List<CharacterModel> characters = (responseBody['data']['characters']['results'] as List)
           .map((character) => CharacterModel.fromJson(character))
           .toList();
