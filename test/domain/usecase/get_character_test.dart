@@ -1,7 +1,8 @@
 import 'package:dartz/dartz.dart';
-import 'package:lh_task/domain/entities/character_entity.dart';
-import 'package:lh_task/domain/usecases/get_character.dart';
+
 import 'package:flutter_test/flutter_test.dart';
+import 'package:lh_task/modules/character/domain/entities/character_entity.dart';
+import 'package:lh_task/modules/character/domain/usecases/get_character.dart';
 import 'package:mockito/mockito.dart';
 
 import '../../helper/test_helper.mocks.dart';
@@ -21,7 +22,7 @@ void main() {
       gender: "Male",
       origin: 'Earth',
       lastKnownLocation: "Dhaka",
-      id: 1,
+      id: "1",
       name: 'Morty');
   const testId = 1 ;
 
@@ -33,7 +34,7 @@ void main() {
 
     
     // act
-   final result = await getCharacterUseCase.execute(testId);
+   final result = await getCharacterUseCase.call(testId);
     // assert
 
     expect(result,const Right(testCharacterEntity));
