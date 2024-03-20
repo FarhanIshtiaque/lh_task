@@ -22,7 +22,7 @@ void main() {
       gender: "Male",
       origin: 'Earth',
       lastKnownLocation: "Dhaka",
-      id: 1,
+      id: "1",
       name: 'Morty');
   const testId = 1 ;
 

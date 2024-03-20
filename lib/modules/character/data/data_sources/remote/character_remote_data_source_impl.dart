@@ -37,12 +37,11 @@ class CharacterRemoteDataSourceImpl implements CharacterRemoteDataSource{
       }
     }
   ''';
-    // Request body
-    Map<String, String> body = {'query': query};
+
 
     final response =
         await client.post(Uri.parse(ApiEndPoints.baseUrl),
-            body: json.encode(body)
+            body:  {'query': query}
         );
 
     if (response.statusCode == 200) {

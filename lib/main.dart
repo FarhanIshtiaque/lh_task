@@ -24,14 +24,6 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: MultiBlocProvider(
-          providers: [
-            BlocProvider(
-              create: (context) =>
-                  getIt<SingleCharacterBloc>(),
-            ),
-          ],
-          child: const Splash(),
-        ));
+        home: const Splash());
   }
 }
