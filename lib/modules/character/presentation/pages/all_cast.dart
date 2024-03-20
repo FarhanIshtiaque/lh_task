@@ -1,15 +1,17 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lh_task/core/constants/app_assets.dart';
 import 'package:lh_task/core/constants/app_colors.dart';
 import 'package:lh_task/core/constants/app_values.dart';
 import 'package:lh_task/core/constants/text_styles.dart';
+import 'package:lh_task/modules/character/domain/entities/character_entity.dart';
+import 'package:lh_task/modules/character/presentation/pages/cast_details.dart';
 import 'package:lh_task/modules/character/presentation/widgets/character_card_big.dart';
 
-import '../../../../core/constants/app_assets.dart';
-
 class AllCast extends StatelessWidget {
-  const AllCast({Key? key}) : super(key: key);
+  const AllCast({super.key, required this.characters});
+
+  final List<CharacterEntity> characters;
 
   @override
   Widget build(BuildContext context) {
@@ -32,10 +34,9 @@ class AllCast extends StatelessWidget {
             AppAssets.appBg,
             fit: BoxFit.cover,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal:AppValues.horizontalPadding),
-            child: SingleChildScrollView(
-
+          SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal:AppValues.horizontalPadding),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
@@ -52,7 +53,7 @@ class AllCast extends StatelessWidget {
                   ),
                   GridView.builder(
                     shrinkWrap: true,
-                    itemCount: 6,
+                    itemCount: characters.length,
                       physics: NeverScrollableScrollPhysics(),
                       padding: EdgeInsets.zero,
                       gridDelegate:
@@ -62,7 +63,15 @@ class AllCast extends StatelessWidget {
                               crossAxisSpacing: 16,
                               mainAxisSpacing: 16),
                       itemBuilder: (context, index) {
-                        return CharacterCardBig(name: 'Rick', image:  "https://rickandmortyapi.com/api/character/avatar/1.jpeg",);
+                        return CharacterCardBig(onTap:(){
+                          final character = characters[index];
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => CastDetails(character:character),
+                            ),
+                          );
+                        }, name: characters[index].name, image:  characters[index].imageUrl,);
                       })
                 ],
               ),

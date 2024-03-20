@@ -9,9 +9,12 @@ import 'package:lh_task/core/constants/app_assets.dart';
 import 'package:lh_task/core/constants/app_colors.dart';
 import 'package:lh_task/core/constants/app_values.dart';
 import 'package:lh_task/core/constants/text_styles.dart';
+import 'package:lh_task/modules/character/domain/entities/character_entity.dart';
 
 class CastDetails extends StatelessWidget {
-  const CastDetails({super.key});
+  const CastDetails({super.key, required this.character});
+
+  final CharacterEntity character ;
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +49,7 @@ class CastDetails extends StatelessWidget {
                     height: 24.h,
                   ),
                   Text(
-                    'Rick Sanchez',
+                    character.name,
                     style: body1Strong.copyWith(color: AppColors.secondary),
                   ),
                   SizedBox(
@@ -66,7 +69,7 @@ class CastDetails extends StatelessWidget {
                         borderRadius: BorderRadius.circular(5),
                         child: CachedNetworkImage(
                           imageUrl:
-                              "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
+                          character.imageUrl,
                           fit: BoxFit.fill,
                         ),
                       ),
@@ -99,7 +102,7 @@ class CastDetails extends StatelessWidget {
                                       tittle4.copyWith(color: AppColors.white),
                                 ),
                                 Text(
-                                  'Alive',
+                                  character.status,
                                   style: body1.copyWith(color: AppColors.white),
                                 )
                               ],
@@ -107,7 +110,7 @@ class CastDetails extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(width: 16,),
+                      const SizedBox(width: 16,),
                       Expanded(
                         child: Container(
                           decoration: BoxDecoration(
@@ -130,7 +133,7 @@ class CastDetails extends StatelessWidget {
                                       tittle4.copyWith(color: AppColors.white),
                                 ),
                                 Text(
-                                  'Alive',
+                                  character.species,
                                   style: body1.copyWith(color: AppColors.white),
                                 )
                               ],
@@ -160,7 +163,7 @@ class CastDetails extends StatelessWidget {
                                   style: tittle4.copyWith(color: AppColors.white),
                                 ),
                                 Text(
-                                  'Male',
+                                  character.gender,
                                   style: body1.copyWith(color: AppColors.white),
                                 )
                               ],
@@ -198,12 +201,12 @@ class CastDetails extends StatelessWidget {
                                 tittle4.copyWith(color: AppColors.white),
                               ),
                               Text(
-                                'Alive',
+                                character.origin,
                                 style: body1.copyWith(color: AppColors.white),
                               )
                             ],
                           ),
-                          Icon(
+                          const Icon(
                             Icons.ios_share_rounded,
                             color: AppColors.white,
                           )
@@ -237,7 +240,7 @@ class CastDetails extends StatelessWidget {
                                 tittle4.copyWith(color: AppColors.white),
                               ),
                               Text(
-                                'Citadel',
+                                character.lastKnownLocation,
                                 style: body1.copyWith(color: AppColors.white),
                               )
                             ],

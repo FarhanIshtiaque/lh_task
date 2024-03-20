@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lh_task/core/constants/app_assets.dart';
 import 'package:lh_task/core/constants/app_colors.dart';
+import 'package:lh_task/core/constants/text_styles.dart';
 import 'package:lh_task/injection_container.dart';
 import 'package:lh_task/modules/character/presentation/bloc/single_character/single_character_bloc.dart';
 import 'package:lh_task/modules/character/presentation/bloc/single_character/single_character_event.dart';
@@ -34,7 +36,6 @@ class Splash extends StatelessWidget {
               right: 0,
               child: Image.asset(
                 AppAssets.rickMorty,
-
               ),
             ),
             // Column(
@@ -59,6 +60,21 @@ class Splash extends StatelessWidget {
             //     ),
             //   ],
             // ),
+            Positioned(
+              bottom: 34,
+              left: 0,
+              right: 0,
+              child: Column(
+                children: [
+                  const CircularProgressIndicator(color:AppColors.black,
+
+                  ),
+                  const SizedBox(height: 12,),
+                  Text('Loading',
+                  style: caption1Strong.copyWith(color: AppColors.black),)
+                ],
+              ),
+            )
           ],
         ),
       ),
